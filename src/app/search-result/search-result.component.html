@@ -1,0 +1,23 @@
+<div>
+  <search-bar [searchText]="searchText" (onSearch)="searchSong($event)"></search-bar>
+</div>
+<div class="Test">
+  <mat-progress-spinner *ngIf="isLoading; else results" class="example-margin" color="primary" mode="indeterminate">
+  </mat-progress-spinner>
+  <ng-template #results>
+    <span *ngIf="error.length > 0" class="error">{{error}}</span>
+    <span *ngIf="error.length === 0 && songs.length === 0">No records found. Please search for some other text.</span>
+    <span *ngIf="error.length === 0 && songs.length > 0">Total Songs Matched: {{songs.length}}</span>
+    <mat-card class="mat-elevation-z5" *ngFor="let song of songs">
+      <mat-card-header>
+        <mat-card-title innerHtml="{{song.title[0] | highlight : searchText }}"></mat-card-title>
+        <mat-card-subtitle>
+          <div *ngFor="let artist of song.artist" innerHtml="{{artist.name[0] | highlight : searchText }}"></div>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </ng-template>
+
+</div>

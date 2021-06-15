@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    align-content: center;
+}
+.mat-card {
+    margin: 16px;
+}
+.main-search-bar {
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .search-bar {
+        width: 40%;
+    }
+}
+.header {
+    width: 50px;
+    margin-bottom: 30px;
+}
+.icon-bg {
+    background-color: #0a8df4;
+}
+.error{
+    color: red
+}
